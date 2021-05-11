@@ -1,25 +1,55 @@
-var commandText = function (text, colour) {
+var yellow = "#EFFF11";
+var green = "#00B200";
+var red = "#FF2100";
+var blue = "ADC9FF";
+
+var commandText = function (text, color = green) {
     return '[[gb;' + color + ';]' + text + ']'
 };
 
 var errorText = function (text) {
-    return '[[g;red;]' + text + ']'
+    return '[[;' + red + ';]' + text + ']'
 };
+
+var vertical = function () {
+    return commandText('|', 'white') + "    "
+};
+
+var link = function (url, text, color = "#ADC9FF") {
+    return "[[!gbu;" + color + ";;;" + url + "]" + text + "]";
+}
+
+const sourceText = "Source code for the website can be found " + link("https://github.com/mynameismon/mynameismon.github.io", "here");
+
+const creditsText = "This website would not have been possible without the wonderful " + commandText("JQuery Terminal Package") + ", which can be found " + link("https://github.com/jcubic/jquery.terminal", "here");
+
+const helpText = "What are the commands that you can use? \n" +
+                 vertical() + commandText("help", green) + ":       Displays this error message.\n" +
+                 vertical() + "\n" + 
+                 vertical() + commandText("credits", yellow) + ":    Credits for the website.\n" +
+                 vertical() + commandText("source", yellow) + ":    Source code for the website.";
 
 $(function() {
     $('body').terminal({
-            hello: function(what) {
-            this.echo('Hello, ' + what + '. Welcome to this terminal.');
-        }, credits: function() {
-            this.echo("This website would not have been possible without the wonderful [[ub;;;;]JQuery Terminal Package], which can be found [[!;;;;https://github.com/jcubic/jquery.terminal]here]")
-        }, source: function() {
-            this.echo("Source code for the website can be found  [[!;;;;https://github.com/mynameismon/mynameismon]here].")
-        }
+        // hello: function(what) {
+        //     this.echo('Hello, ' + what + '. Welcome to this terminal.');
+        // }, 
+        credits: function() {
+            this.echo(creditsText)
+     }, source: function() {
+            this.echo(sourceText)
+     }, help: function() {
+            this.echo(helpText)
+     }
     }, {
+
+    // First message printed on opening the terminal
     greetings: "Welcome to my website! Clearly, there is a lot of work to do :D \n",
+    
+    // If command is not found, it will execute this:
     onCommandNotFound: function(cmd, term) {
-        error_strings = [ errorText("Whoops! Looks like " + cmd + " is not found! Try running ") + commandText("help", "green") + errorText(", maybe?"),
-                    errorText("Are you sure " + cmd + "is right? :( Maybe you can check the spelling or type ") + commandText("help", "green") + errorText(", if that helps.")]
+        var  error_strings = [errorText("Whoops! Looks like " + cmd + " is not found! \nTry running ") + commandText("help", "green") + errorText(", maybe?"),
+                              errorText("Are you sure " + cmd + " is right? :( \nMaybe you can check the spelling or type ") + commandText("help", "green") + errorText(", if that helps.")];
         term.echo(error_strings[Math.floor(error_strings.length * Math.random())])
     }
     }) 
