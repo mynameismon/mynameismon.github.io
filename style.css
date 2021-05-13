@@ -884,3 +884,10 @@ terminal .terminal-output>div {
 /*# sourceMappingURL=jquery.terminal.min.css.map */
 
 /** JQuery Terminal (modified) Stylesheet ends */
+
+/* Custom CSS Rules */
+
+headings-text {
+    font-size: 18px !important;
+    font-family: 'Source Code Pro' !important;
+}

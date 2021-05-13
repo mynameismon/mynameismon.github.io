@@ -25,11 +25,12 @@ const sourceText = "Source code for the website can be found " + link("https://g
 
 const creditsText = "This website would not have been possible without the wonderful " + commandText("JQuery Terminal Package") + ", which can be found " + link("https://github.com/jcubic/jquery.terminal", "here");
 
-const helpText = "What are the commands that you can use? \n" +
-                 vertical() + commandText("help", green) + ":       Displays this error message.\n" +
+const helpTextIntro =  "<br> <headings-text> What are the commands that you can use? </headings-text> <br> <br>";
+
+const helpText = vertical() + commandText("help", green) + ":       Displays this help message.\n" +
                  vertical() + "\n" + 
                  vertical() + commandText("credits", yellow) + ":    Credits for the website.\n" +
-                 vertical() + commandText("source", yellow) + ":    Source code for the website.";
+                 vertical() + commandText("source", yellow) + ":     Source code for the website. \n";
 
 $(function() {
     $('body').terminal({
@@ -41,7 +42,8 @@ $(function() {
      }, source: function() {
             this.echo(sourceText)
      }, help: function() {
-            this.echo(helpText)
+            this.echo(helpTextIntro, {"raw": true});
+            this.echo(helpText);
      }
     }, {
 
