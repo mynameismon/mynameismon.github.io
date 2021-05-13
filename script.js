@@ -2,6 +2,8 @@ var yellow = "#EFFF11";
 var green = "#00B200";
 var red = "#FF2100";
 var blue = "ADC9FF";
+var lightgreen = "#CEFFED";
+var lilac = "#ADC9FF";
 
 var commandText = function (text, color = green) {
     return '[[gb;' + color + ';]' + text + ']'
@@ -12,10 +14,10 @@ var errorText = function (text) {
 };
 
 var vertical = function () {
-    return commandText('|', 'white') + "    "
+    return commandText('|', lightgreen) + "    "
 };
 
-var link = function (url, text, color = "#ADC9FF") {
+var link = function (url, text, color = lilac) {
     return "[[!gbu;" + color + ";;;" + url + "]" + text + "]";
 }
 
