@@ -19,7 +19,21 @@ var vertical = function () {
 
 var link = function (url, text, color = lilac) {
     return "[[!gbu;" + color + ";;;" + url + "]" + text + "]";
-}
+};
+
+const banner = "" +
+"[[b;#008cff;]###########################################################################]\n"+
+"[[b;#008cff;]#]                                                                         [[b;#008cff;]#]\n" +
+"[[b;#008cff;]#][[b;#fbff00;]   __  __             _     _        _____ _             _           _   ][[b;#008cff;]#]\n" +
+"[[b;#008cff;]#][[b;#fbff00;]  |  \\/  |           (_)   | |      / ____(_)           | |         | |  ][[b;#008cff;]#]\n" +
+"[[b;#008cff;]#][[b;#fbff00;]  | \\  / | ___  _ __  _ ___| |__   | (___  _ _ __   __ _| |__   __ _| |  ][[b;#008cff;]#]\n" +
+"[[b;#008cff;]#][[b;#fbff00;]  | |\\/| |/ _ \\| '_ \\| / __| '_ \\   \\___ \\| | '_ \\ / _` | '_ \\ / _` | |  ][[b;#008cff;]#]\n" +
+"[[b;#008cff;]#][[b;#fbff00;]  | |  | | (_) | | | | \\__ \\ | | |  ____) | | | | | (_| | | | | (_| | |  ][[b;#008cff;]#]\n" +
+"[[b;#008cff;]#][[b;#fbff00;]  |_|  |_|\\___/|_| |_|_|___/_| |_| |_____/|_|_| |_|\\__, |_| |_|\\__,_|_|  ][[b;#008cff;]#]\n" +
+"[[b;#008cff;]#][[b;#fbff00;]                                                    __/ |                ][[b;#008cff;]#]\n" +
+"[[b;#008cff;]#][[b;#fbff00;]                                                   |___/                 ][[b;#008cff;]#]\n" + 
+"[[b;#008cff;]#][[b;#fbff00;]                                                                         ][[b;#008cff;]#]\n" +
+"[[b;#008cff;]###########################################################################]\n";
 
 const sourceText = "Source code for the website can be found " + link("https://github.com/mynameismon/mynameismon.github.io", "here");
 
@@ -48,7 +62,7 @@ $(function() {
     }, {
 
     // First message printed on opening the terminal
-    greetings: "Welcome to my website! Clearly, there is a lot of work to do :D \n",
+    greetings: banner,
     
     // If command is not found, it will execute this:
     onCommandNotFound: function(cmd, term) {
