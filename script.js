@@ -33,6 +33,8 @@ const banner = "" +
 "[[b;#008cff;]#][[b;#fbff00;]                                                    __/ |                ][[b;#008cff;]#]\n" +
 "[[b;#008cff;]#][[b;#fbff00;]                                                   |___/                 ][[b;#008cff;]#]\n" + 
 "[[b;#008cff;]#][[b;#fbff00;]                                                                         ][[b;#008cff;]#]\n" +
+"[[b;#008cff;]#] [[;#fdffcf;] Welcome to " + commandText("Monish Singhal", "white") + "'s personal website! Type " + commandText("help", "white") + " to know more!  ][[b;#008cff;]#]\n"+ 
+"[[b;#008cff;]#]                                                                         [[b;#008cff;]#]\n" +
 "[[b;#008cff;]###########################################################################]\n";
 
 const sourceText = "Source code for the website can be found " + link("https://github.com/mynameismon/mynameismon.github.io", "here");
