@@ -64,7 +64,7 @@
 }
 
 .terminal {
-    line-height: normal;
+    line-height: 1.3em;
     overflow-y: auto;
     position: relative
 }
@@ -133,7 +133,7 @@ body.full-screen-terminal .terminal {
 
 .cmd.cmd.cmd .cmd-inverted, .cmd.cmd.cmd .inverted, .terminal .inverted, .terminal .terminal-inverted {
     background-color: #171717!important;
-    color: #171717!important
+    color: #171717
 }
 
 .cmd a[href], .terminal .terminal-output>:not(.raw) a[href] {
@@ -601,8 +601,8 @@ terminal .terminal-output>div {
 }
 
 .terminal .terminal-output>:not(.raw) .terminal-error, .terminal .terminal-output>:not(.raw) .terminal-error * {
-    color: red;
-    color: var(--error-color, red)
+    color: #FF2100;
+    color: var(--error-color,#FF2100)
 }
 
 .tilda {
@@ -890,4 +890,13 @@ terminal .terminal-output>div {
 headings-text {
     font-size: 18px !important;
     font-family: 'Source Code Pro' !important;
+}
+
+div.terminal-command > div > span:not(.terminal-prompt){
+    color: rgb(255, 253, 147) !important;
+    
+}
+
+div > div.terminal-wrapper > div.cmd > div > div span {
+    color: rgb(147, 255, 183)!important;
 }

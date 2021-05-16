@@ -1,5 +1,5 @@
 var yellow = "#EFFF11";
-var green = "#00B200";
+var green = "#93ff93";
 var red = "#FF2100";
 var blue = "ADC9FF";
 var lightgreen = "#CEFFED";
@@ -69,8 +69,8 @@ $(function() {
     
     // If command is not found, it will execute this:
     onCommandNotFound: function(cmd, term) {
-        var  error_strings = [errorText("Whoops! Looks like " + commandText(cmd, "white") + " is not found! \nTry running ") + commandText("help", "green") + errorText(", maybe?"),
-                              errorText("Are you sure " + commandText(cmd, "white") + " is right? :( \nMaybe you can check the spelling or type ") + commandText("help", "green") + errorText(", if that helps.")];
+        var  error_strings = [errorText("Whoops! Looks like " + commandText(cmd, "white") + " is not found! \nTry running ") + commandText("help") + errorText(", maybe?"),
+                              errorText("Are you sure " + commandText(cmd, "white") + " is right? :( \nMaybe you can check the spelling or type ") + commandText("help") + errorText(", if that helps.")];
         term.echo(error_strings[Math.floor(error_strings.length * Math.random())])
     }
     }) 
