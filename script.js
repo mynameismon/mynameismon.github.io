@@ -4,6 +4,7 @@ var red = "#FF2100";
 var blue = "ADC9FF";
 var lightgreen = "#CEFFED";
 var lilac = "#ADC9FF";
+var offwhite = "#f8f8ff";
 
 var commandText = function (text, color = green) {
     return '[[gb;' + color + ';]' + text + ']'
@@ -33,7 +34,7 @@ const banner = "" +
 "[[b;#008cff;]#][[b;#fbff00;]                                                    __/ |                ][[b;#008cff;]#]\n" +
 "[[b;#008cff;]#][[b;#fbff00;]                                                   |___/                 ][[b;#008cff;]#]\n" + 
 "[[b;#008cff;]#][[b;#fbff00;]                                                                         ][[b;#008cff;]#]\n" +
-"[[b;#008cff;]#] [[;#fdffcf;] Welcome to " + commandText("Monish Singhal", "white") + "'s personal website! Type " + commandText("help", "white") + " to know more!  ][[b;#008cff;]#]\n"+ 
+"[[b;#008cff;]#] [[;#9CAAAA;] Welcome to " + commandText("Monish Singhal's", offwhite) + " personal website! Type " + commandText("help") + " to know more!  ][[b;#008cff;]#]\n"+ 
 "[[b;#008cff;]#]                                                                         [[b;#008cff;]#]\n" +
 "[[b;#008cff;]###########################################################################]\n";
 
@@ -68,8 +69,8 @@ $(function() {
     
     // If command is not found, it will execute this:
     onCommandNotFound: function(cmd, term) {
-        var  error_strings = [errorText("Whoops! Looks like " + cmd + " is not found! \nTry running ") + commandText("help", "green") + errorText(", maybe?"),
-                              errorText("Are you sure " + cmd + " is right? :( \nMaybe you can check the spelling or type ") + commandText("help", "green") + errorText(", if that helps.")];
+        var  error_strings = [errorText("Whoops! Looks like " + commandText(cmd, "white") + " is not found! \nTry running ") + commandText("help", "green") + errorText(", maybe?"),
+                              errorText("Are you sure " + commandText(cmd, "white") + " is right? :( \nMaybe you can check the spelling or type ") + commandText("help", "green") + errorText(", if that helps.")];
         term.echo(error_strings[Math.floor(error_strings.length * Math.random())])
     }
     }) 
